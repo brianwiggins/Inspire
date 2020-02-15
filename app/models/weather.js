@@ -4,11 +4,20 @@ export default class Weather {
     //NOTE Have you ever wanted to know the temperature measured in kelvin? 
     //      That is what this data returns! data.main.temp is the temperature in Kelvin
 
-
-    //TODO You should probably convert the temperature data to either F or C
-    //      check out the other data that comes back and see if there is anything you want to try
-
     this.city = data.name
     this.kelvin = data.main.temp
+    this.celsius = this.getCelisus();
+    this.farenheit = this.getFarenheit();
+    this.humidity = data.main.humidty;
+    this.description = data.weather[0].main
+  }
+  getFarenheit() {
+    let farenheit = Math.round((9 / 5) * (this.celsius) + 32);
+    return farenheit;
+  }
+
+  getCelisus() {
+    let celcius = Math.round(this.kelvin + 273.15);
+    return celcius;
   }
 }
