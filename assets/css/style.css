@@ -2,6 +2,13 @@
   color: red;
   font-size: 2em;
 }
+body{
+
+  background:no-repeat center fixed;
+  background-size:cover;
+
+}
+
 *{
-  border: 1px solid red
+  border:none !important
 }

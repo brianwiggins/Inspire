@@ -11,39 +11,43 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body id="bg-image">
+<body>
 	<div class="container-fluid">
-		<div class="row justify-content-end" id="weather-row">
-			<div class="col-xs-12 text-end">
-				<div id="weather">
-					Your Weather Template
-				</div>
+		<span id="bg-image"></span>
+		<div class="row" id="weather-row">
+			<div class="col-xs-4 col-md-1">
+				<div id="source"></div>
+			</div>
+			<div class="col-xs-4 col-md-8"></div>
+			<div class="col-xs-4 col-md-2" id="weather">
+				Your Weather Template
 			</div>
 		</div>
-		<div class="row justify-content-center" id="clock-row">
-			<div class="col-xs-12 text-center">
-				<div class="d-flex" id="clock">
-					My Clock
-				</div>
+	</div>
+	<div class="row justify-content-center" id="clock-row">
+		<div class="col-xs-12 text-center">
+			<div class="d-flex" id="clock">
+				My Clock
 			</div>
 		</div>
+	</div>
 
-		<div class="row justify-content-center align-items-end" id="quote-todo-row">
-			<div class="col-xs-12 col-md-4" id="space-holder"></div>
-			<div class="col-xs-12 col-md-4 align-items-end text-center">
-				<div id="quote">
-					The Quote
-				</div>
-			</div>
-			<div class="col-xs-12 col-md-4 justify-content-end">
-				<div class="card mb-3" id="todo">
-					A Todo List
-				</div>
-				<div id="todo-error"></div>
-				<form onsubmit=""></form>
-				<div id="todos"></div>
+	<div class="row justify-content-center align-items-end" id="quote-todo-row">
+		<div class="col-xs-12 col-md-4" id="space-holder"></div>
+		<div class="col-xs-12 col-md-4 align-items-end text-center">
+			<div id="quote">
+				The Quote
 			</div>
 		</div>
+		<div class="col-xs-12 col-md-4 justify-content-end">
+			<div class="card mb-3" id="todo">
+				A Todo List
+			</div>
+			<div id="todo-error"></div>
+			<form onsubmit=""></form>
+			<div id="todos"></div>
+		</div>
+	</div>
 	</div>
 
 	<!--Axios API script-->
