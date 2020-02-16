@@ -8,7 +8,16 @@ body{
   background-size:cover;
 
 }
+#weather{
+  background-color:(10,10,10,.5);
+  color:white;
+}
 
 *{
-  border:none !important
+  border:none !important;
+  
+}
+#clock{
+  color:white !important;
+  -webkit-text-stroke:1px black !important;
 }
