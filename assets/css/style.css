@@ -17,7 +17,7 @@ body{
   border:none !important;
   
 }
-#clock{
+#clock,#weather{
   color:white !important;
   -webkit-text-stroke:1px black !important;
 }
