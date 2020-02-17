@@ -25,7 +25,10 @@ export default class TodoController {
     e.preventDefault();
     let form = e.target;
     let todo = {
-      //TODO build the todo object from the data that comes into this method
+      completed: false,
+      user: "BRIANWIGGINS",
+      description: form
+
     };
     TodoService.addTodoAsync(todo);
   }

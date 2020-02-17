@@ -9,7 +9,7 @@ export default class Weather {
     this.celsius = this.getCelisus();
     this.farenheit = this.getFarenheit();
     this.humidity = data.main.humidity;
-    this.imgUrl = this.getImgUrl();
+    this.imgUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
     this.desc = this.getWeatherDesc();
 
 

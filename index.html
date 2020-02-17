@@ -15,12 +15,13 @@
 	<div class="container-fluid">
 		<span id="bg-image"></span>
 		<div class="row" id="weather-row">
-			<div class="col-xs-4 col-md-1">
-				<div class="bg-dark" id="source"></div>
+			<div class="col-xs-6">
+				<div class="bg-dark" style="border-radius:10px" id="source"></div>
 			</div>
-			<div class="col-xs-4 col-md-8"></div>
-			<div class="col-xs-4 col-md-2" id="weather">
-				Your Weather Template
+
+			<div class="col-xs-6">
+				<div style="justify-self:end;" id="weather">>Your Weather Template
+				</div>
 			</div>
 		</div>
 	</div>
@@ -54,6 +55,9 @@
 					</div>
 				</div>
 				<form onsubmit="(app.todoController.addToDo(event))">
+					<div class="form-group">
+						<input type="text" class="form-control" id="new-task" placeholder="Enter A new Task">
+					</div>
 					<button type="submit" class="btn btn-success">Update Tasks</button>
 				</form>
 			</div>

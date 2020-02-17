@@ -10,6 +10,7 @@ export default class ClockController {
   constructor() {
     setInterval(drawClock, 30000)
     drawClock();
+
     ClockService.getTime();
   }
 }

@@ -10,7 +10,7 @@ let _state = {
   /**@type {Clock} */
   clock: new Clock({ time: "loading", date: "loading" }),
   /**@type {Weather} */
-  weather: new Weather({ name: "loading", main: { temp: 0.0 } }), //temporary fake data
+  weather: null, //temporary fake data
   /**@type {Quote} */
   quote: new Quote({ quote: "loading", author: "loading" }),
   /**@type {ToDo[]}*/

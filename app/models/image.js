@@ -4,6 +4,6 @@ export default class Image {
     this.source = data.site;
   }
   get ImageTemplate() {
-    return `<p style="font-weight:lighter;color:white;">Image Source: ${this.source}</p>`
+    return `<p style="font-weight:lighter; color:white;">Image Source: ${this.source}</p>`
   }
 }
