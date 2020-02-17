@@ -16,7 +16,7 @@
 		<span id="bg-image"></span>
 		<div class="row" id="weather-row">
 			<div class="col-xs-4 col-md-1">
-				<div id="source"></div>
+				<div class="bg-dark" id="source"></div>
 			</div>
 			<div class="col-xs-4 col-md-8"></div>
 			<div class="col-xs-4 col-md-2" id="weather">
@@ -40,18 +40,23 @@
 			</div>
 		</div>
 		<div class="col-xs-12 col-md-4 justify-content-end ">
-			<form onsubmit="(app.todoController.addToDo(event))">
-				<div class="row">
-					<div class="col-6">
-						<p id="task-count">Tasks: </p>
+			<div class="card bg-dark text-white">
+				<div class="card-header">Your Tasks Today</div>
+				<div class="card-block">
+					<div class="row">
+						<div class="col-6">
+							<p id="task-count">Tasks: </p>
+						</div>
+						<div class="col-6">
+							<p>Mark done</p>
+						</div>
+						<span id="todo"></span>
 					</div>
-					<div class="col-6">
-						<p>Mark done</p>
-					</div>
-					<span id="todo"></span>
 				</div>
-				<button type="submit" class="btn btn-success">Update Tasks</button>
-			</form>
+				<form onsubmit="(app.todoController.addToDo(event))">
+					<button type="submit" class="btn btn-success">Update Tasks</button>
+				</form>
+			</div>
 			<div id="todo-error"></div>
 
 		</div>
