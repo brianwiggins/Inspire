@@ -9,8 +9,16 @@ export default class ToDo {
     return `
       <div class="form-check">
   <label class = "form-check-label" for="done" style="float:left;">${this.description}</label>
-  <input type="checkbox" class="form-check-input" id="done">
+  <input type="checkbox" checked="${this.completed}" name="${this.id}" onChange={(e)=>this.changeCompleted()} class="form-check-input" id="done">
       </div>
     `
+  }
+  changeCompleted() {
+    if (this.completed) {
+      this.completed = false;
+    }
+    else {
+      this.completed = true;
+    }
   }
 }

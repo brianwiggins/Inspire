@@ -4,7 +4,7 @@ export default class Clock {
     this.date = this.dateObject.getDate();
     this.AM = true;
     this.hours = this.getTimeHours();
-    this.minutes = this.dateObject.getMinutes();
+    this.minutes = this.getPrettyMinutes();
     this.day = this.getDayofWeek();
     this.year = this.dateObject.getFullYear();
 
@@ -16,6 +16,19 @@ export default class Clock {
       this.AM = false;
     }
     return hours;
+  }
+  getPrettyMinutes() {
+    let prettyMinutes = "";
+    let minutes = this.dateObject.getMinutes();
+    if ((minutes.toString().length) <= 1) {
+      prettyMinutes += "0" + minutes
+      if ((prettyMinutes.length <= 1)) {
+        prettyMinutes += "0";
+      }
+    } else {
+      prettyMinutes = minutes.toString();
+    }
+    return prettyMinutes;
   }
   getDayofWeek() {
     let dayNum = this.dateObject.getDay();

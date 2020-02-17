@@ -39,13 +39,21 @@
 				The Quote
 			</div>
 		</div>
-		<div class="col-xs-12 col-md-4 justify-content-end">
-			<div class="card mb-3" id="todo">
-				A Todo List
-			</div>
+		<div class="col-xs-12 col-md-4 justify-content-end ">
+			<form onsubmit="(app.todoController.addToDo(event))">
+				<div class="row">
+					<div class="col-6">
+						<p id="task-count">Tasks: </p>
+					</div>
+					<div class="col-6">
+						<p>Mark done</p>
+					</div>
+					<span id="todo"></span>
+				</div>
+				<button type="submit" class="btn btn-success">Update Tasks</button>
+			</form>
 			<div id="todo-error"></div>
-			<form onsubmit=""></form>
-			<div id="todos"></div>
+
 		</div>
 	</div>
 	</div>
