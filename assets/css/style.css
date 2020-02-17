@@ -21,3 +21,9 @@ body{
   color:white !important;
   -webkit-text-stroke:1px black !important;
 }
+#quote-todo-row{
+  position:absolute;
+  bottom:0;
+  width:100vw;
+  color:white;
+}

@@ -39,7 +39,7 @@ export default class Weather {
   get WeatherTemplate() {
     return `
     <div class="card bg-transparent">
-      <img src="${this.imgUrl}" class="card-img-top" alt="☁️">
+      <img src="${this.imgUrl}" class="card-img-top" alt="ICON HELP PLEASE">
       <div class="card-body">
         <h3 class="card-title">${this.city}</h3>
         <h4 class="card-subtitle"${this.desc}></h4>
