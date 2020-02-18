@@ -3,7 +3,7 @@ import Quote from "../models/quote.js"
 
 // @ts-ignore
 const quoteApi = axios.create({
-  baseURL: "http://bcw-sandbox.herokuapp.com/api/quotes",
+  baseURL: "https://bcw-sandbox.herokuapp.com/api/quotes",
   timeout: 3000
 });
 
