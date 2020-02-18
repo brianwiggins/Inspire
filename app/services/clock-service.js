@@ -3,7 +3,6 @@ import Clock from "../models/clock.js"
 class ClockService {
   getTime() {
     store.commit("clock", new Clock())
-    setInterval(this.getTime, 5000)
   }
 }
 

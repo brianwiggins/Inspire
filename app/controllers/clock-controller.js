@@ -8,9 +8,9 @@ function drawClock() {
 }
 export default class ClockController {
   constructor() {
-    setInterval(drawClock, 30000)
+    setInterval(drawClock, 5000)
+    ClockService.getTime();
     drawClock();
 
-    ClockService.getTime();
   }
 }

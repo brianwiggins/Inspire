@@ -2,19 +2,27 @@ import TodoService from "../services/todo-service.js";
 import store from "../store.js";
 
 //TODO Create the render function
-function _drawTodos() { }
+function _drawTodos() {
+  let template = '';
+  store.State.todos.forEach(t => {
+    template += t.Template;
+
+  })
+  document.getElementById("todo").innerHTML = template;
+}
 
 export default class TodoController {
   constructor() {
-    //TODO Remember to register your subscribers
+    store.subscribe("todos", _drawTodos)
     TodoService.getTodos();
   }
 
+
   addTodo(e) {
     e.preventDefault();
-    var form = e.target;
-    var todo = {
-      //TODO build the todo object from the data that comes into this method
+    let form = e.target;
+    let todo = {
+      description: form.description.value,
     };
     TodoService.addTodoAsync(todo);
   }

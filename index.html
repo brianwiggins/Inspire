@@ -33,10 +33,10 @@
 		</div>
 	</div>
 
-	<div class="row justify-content-center align-items-end" id="quote-todo-row">
+	<div class="row" style="justify-content: space-between !important;" id="quote-todo-row">
 		<div class="col-xs-12 col-md-4" id="space-holder"></div>
-		<div class="col-xs-12 col-md-4 align-items-end text-center">
-			<div id="quote">
+		<div class="col-xs-12 col-md-4">
+			<div class="d-flex justify-content-center" id="quote">
 				The Quote
 			</div>
 		</div>
@@ -46,17 +46,17 @@
 				<div class="card-block">
 					<div class="row">
 						<div class="col-6">
-							<p id="task-count">Tasks: </p>
+							<p id="task-count">Tasks: 0 </p>
 						</div>
 						<div class="col-6">
 							<p>Mark done</p>
 						</div>
-						<span id="todo"></span>
 					</div>
+					<form id="todo"></form>
 				</div>
-				<form>
+				<form onsubmit="app.todoController.addTodo(event)">
 					<div class="form-group">
-						<input type="text" class="form-control" id="new-task" placeholder="Enter A new Task">
+						<input type="text" name="description" class="form-control" id="new-task" placeholder="Enter A new Task">
 					</div>
 					<button type="submit" class="btn btn-success">Update Tasks</button>
 				</form>

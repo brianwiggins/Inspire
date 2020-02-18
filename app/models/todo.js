@@ -1,24 +1,26 @@
+
 export default class ToDo {
   constructor(data) {
-    this.id = data.id;
+    this.id = data._id;
     this.completed = data.completed;
     this.user = data.user;
     this.description = data.description;
   }
-  get ToDoTemplate() {
-    return `
-      <div class="form-check">
-  <label class = "form-check-label" for="done" style="float:left;">${this.description}</label>
-  <input type="checkbox" checked="${this.completed}" name="${this.id}" onChange={(e)=>this.changeCompleted()} class="form-check-input" id="done">
-      </div>
-    `
-  }
+
   changeCompleted() {
+    this.completed = !this.completed;
+  }
+
+  get Template() {
+    let checked = "";
     if (this.completed) {
-      this.completed = false;
+      checked = "checked"
     }
-    else {
-      this.completed = true;
-    }
+    let template = `<div class="form-check row mb-1">
+      <label class = "form-check-label col-6" for="done">${this.description}</label>
+      <input type="checkbox" 
+      ${checked} name="${this.id}" onClick="app.todoController.toggleTodoStatus(${this.id})" class="form-check-input col-2" id="done"> <button class="btn btn-danger col-4" onclick="app.todoController.removeTodo(${this.id})">Delete</button></div>`
+
+    return template;
   }
 }
