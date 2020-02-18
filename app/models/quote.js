@@ -7,7 +7,7 @@ export default class Quote {
   get QuoteTemplate() {
     return `
     <div class = "card">
-      <div class="card-body" ><p class="card-title" style="text-decoration-color:white;">${this.quote}</p><br><p class="card-subtitle">     -${this.author}</p>
+      <div class="card-body" style="background:none;" ><p class="card-title">${this.quote}</p><br><p class="card-subtitle">     -${this.author}</p>
       </div>
     </div>
     `
