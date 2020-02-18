@@ -34,6 +34,11 @@ export default class TodoController {
 
   //NOTE This method will pass an Id to your service for the TODO that will need to be deleted
   removeTodo(todoId) {
-    TodoService.removeTodoAsync(todoId);
+    try {
+      TodoService.removeTodoAsync(todoId);
+    }
+    catch (e) {
+      alert(e.message)
+    }
   }
 }

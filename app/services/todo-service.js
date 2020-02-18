@@ -27,10 +27,10 @@ class TodoService {
   addTodoAsync(todo) {
     todoApi.post("", todo).then(res => {
       let fixed = new ToDo(res.data.data)
-      let todos = [...store.State.todos, todo];
-      store.commit("todos", todo).catch(e => {
-        throw new Error(e)
-      })
+      let todos = [...store.State.todos, fixed];
+      store.commit("todos", todos)
+    }).catch(e => {
+      throw new Error(e)
     })
     //TODO Handle this response from the server (hint: what data comes back, do you want this?)
 
@@ -43,25 +43,32 @@ class TodoService {
       todo.changeCompleted();//change its completed status to opposite
 
 
-      todoApi.put(todoId, todo);
-      this.getTodos();
+      todoApi.put(todoId, todo)
+        .then(res => {
+          this.getTodos();
+        })
     }
     //TODO do you care about this data? or should you go get something else?
   }
 
   removeTodoAsync(todoId) {
-    todoApi.get(`${todoId}`).then(res => {
-      let todo = res;
-      if (todo.completed) {
-        todoApi.delete(`${todoId}`, todo)//what is the request type
-        this.getTodos();//once the request comes back, what do you need to ensure happens
-      }
+    // todoApi.get(`${todoId}`).then(res => {
+    //   let todo = res;
+    let todo = store.State.todos.find(t => t.id == todoId)
+    if (todo.completed) {
+      todoApi.delete(todoId)
+        .then(res => {
+          this.getTodos();//once the request comes back, what do you need to ensure happens
+
+        })//what is the request type
+    } else {
+      throw new Error("Must be complete")
     }
-    )
-
-
   }
+
+
 }
+
 
 const todoService = new TodoService();
 export default todoService;

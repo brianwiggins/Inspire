@@ -19,8 +19,11 @@ export default class ToDo {
     let template = `<div class="form-check row mb-1">
       <label class = "form-check-label col-6" for="done">${this.description}</label>
       <input type="checkbox" 
-      ${checked} name="${this.id}" onClick="app.todoController.toggleTodoStatus(${this.id})" class="form-check-input col-2" id="done"> <button class="btn btn-danger col-4" onclick="app.todoController.removeTodo(${this.id})">Delete</button></div>`
+      ${checked} name="${this.id}" onclick="app.todoController.toggleTodoStatus('${this.id}')" class="form-check-input col-2" id="done"> <button class="btn btn-danger col-4" onclick="app.todoController.removeTodo('${this.id}')">Delete</button></div>`
 
     return template;
   }
 }
+
+
+
