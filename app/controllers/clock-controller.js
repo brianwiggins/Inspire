@@ -1,16 +1,20 @@
-import ClockService from "../services/clock-service.js";
 import store from "../store.js";
+import clockService from "../services/clock-service.js";
 
 function drawClock() {
-  store.subscribe("clock", drawClock);
   document.getElementById("clock").innerHTML = store.State.clock.ClockTemplate;
-
+}
+function getTime() {//not my job
+  clockService.getTime();
 }
 export default class ClockController {
   constructor() {
-    setInterval(drawClock, 5000)
-    ClockService.getTime();
-    drawClock();
-
+    store.subscribe("clock", drawClock);
+    setInterval(function () {
+      getTime();
+    }, 5000)
   }
+
+
+
 }

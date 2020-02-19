@@ -1,5 +1,5 @@
 export default class Clock {
-  constructor(data) {
+  constructor() {
     this.dateObject = new Date();
     this.date = this.dateObject.getDate();
     this.AM = true;
@@ -11,7 +11,9 @@ export default class Clock {
   }
   getTimeHours() {
     let hours = this.dateObject.getHours();
-    if (hours >= 13) {
+    if (hours == 0) {
+      hours = 1;
+    } else if (hours >= 13) {
       hours -= 12;
       this.AM = false;
     }
